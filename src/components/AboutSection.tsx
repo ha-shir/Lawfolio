@@ -47,7 +47,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                 <div className="w-full h-full rounded-full overflow-hidden bg-[#0B0B0B]">
                   <img
                     src="/advocate-real.jpg"
-                    alt="Adv. Arjun Menon - Advocate High Court of Kerala"
+                    alt="Adv. Muhammad Ajmal KTV - Advocate High Court of Kerala"
                     className="w-full h-full object-cover object-[50%_25%] grayscale contrast-[1.08] brightness-[0.98] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -76,7 +76,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
             </div>
 
             <h2 className="font-editorial text-3xl sm:text-4xl lg:text-[42px] leading-tight text-[#0B0B0B] font-medium mb-4">
-              Adv. Arjun Menon
+              Adv. Muhammad Ajmal KTV
             </h2>
 
             <p className="text-sm sm:text-base font-sans text-[#0B0B0B]/80 font-light leading-relaxed mb-6">

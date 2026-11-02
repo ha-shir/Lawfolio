@@ -115,7 +115,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
               >
                 <img
                   src="/advocate-portrait.jpg"
-                  alt="Adv. Arjun Menon - Advocate High Court of Kerala"
+                  alt="Adv. Muhammad Ajmal KTV - Advocate High Court of Kerala"
                   className="w-full h-auto aspect-[4/5] sm:aspect-[4/5] object-cover object-top grayscale contrast-[1.12] brightness-[0.93] transition-transform duration-1000 ease-out group-hover:scale-[1.015]"
                   loading="eager"
                 />

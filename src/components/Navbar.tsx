@@ -57,16 +57,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={(e) => handleNavClick(e, '#home')}
             className="group flex items-center gap-3.5 focus:outline-none"
           >
-            {/* AM Monogram */}
+            {/* MAK Monogram */}
             <div className="w-10 h-10 rounded-sm bg-[#151515] border border-white/15 flex items-center justify-center transition-transform duration-300 group-hover:border-white/40">
-              <span className="font-editorial text-lg tracking-wider text-[#F5F2EA] font-semibold italic">
-                AM
+              <span className="font-editorial text-sm tracking-wider text-[#F5F2EA] font-semibold italic">
+                MAK
               </span>
             </div>
 
             <div className="flex flex-col text-left">
               <span className="font-editorial text-base sm:text-lg text-[#F5F2EA] tracking-wide font-medium leading-none">
-                Adv. Arjun Menon
+                Adv. Muhammad Ajmal KTV
               </span>
               <span className="text-[10px] sm:text-[11px] font-sans tracking-[0.24em] text-[#A5A5A5] uppercase mt-1">
                 Advocate
@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={onToggleIPhonePreview}
                 title={isIPhonePreview ? "Switch to Fullscreen Desktop View" : "Preview in iPhone 16 Pro Mockup Frame"}
-                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-sans tracking-wide bg-white/5 hover:bg-white/10 text-[#EAE5DA] border border-white/10 transition-colors"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-sans tracking-wide bg-white/5 hover:bg-white/10 text-[#EAE5DA] border border-white/10 transition-colors cursor-pointer"
               >
                 <span className="text-xs">{isIPhonePreview ? '🖥️ Desktop View' : '📱 iPhone Frame'}</span>
               </button>
@@ -177,7 +177,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-3.5 h-3.5" />
-            <span>contact@arjunmenon.in</span>
+            <span>contact@ajmalktv.in</span>
           </div>
         </div>
       </div>

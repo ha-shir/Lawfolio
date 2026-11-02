@@ -138,7 +138,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-[10px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase font-semibold">
-                  Chambers of Adv. Arjun Menon
+                  Chambers of Adv. Muhammad Ajmal KTV
                 </span>
               </div>
               <h3 className="font-editorial text-2xl sm:text-3xl text-white font-medium tracking-tight">

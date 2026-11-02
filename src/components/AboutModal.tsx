@@ -33,7 +33,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
           <div className="w-16 h-16 rounded-full overflow-hidden border border-white/20 shrink-0 bg-[#0B0B0B]">
             <img
               src="/advocate-real.jpg"
-              alt="Adv. Arjun Menon"
+              alt="Adv. Muhammad Ajmal KTV"
               className="w-full h-full object-cover object-[50%_25%] grayscale"
             />
           </div>
@@ -43,7 +43,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
               Curriculum Vitae & Chambers
             </span>
             <h3 className="font-editorial text-2xl sm:text-3xl text-white font-medium tracking-tight">
-              Adv. Arjun Menon
+              Adv. Muhammad Ajmal KTV
             </h3>
             <p className="text-xs font-sans text-[#F5F2EA]/80 mt-0.5">
               Advocate • High Court of Kerala
@@ -54,10 +54,10 @@ export const AboutModal: React.FC<AboutModalProps> = ({
         {/* Narrative Biography */}
         <div className="space-y-4 text-xs sm:text-sm font-sans font-light text-white/80 leading-relaxed border-t border-b border-white/10 py-5">
           <p>
-            Adv. Arjun Menon is an independent litigating advocate practicing before the High Court of Kerala, District & Sessions Courts, and specialized statutory tribunals. He enrolled with the Bar Council of Kerala following his legal education at the prestigious Government Law College, Ernakulam.
+            Adv. Muhammad Ajmal KTV is an independent litigating advocate practicing before the High Court of Kerala, District & Sessions Courts, and specialized statutory tribunals. He enrolled with the Bar Council of Kerala following his comprehensive legal education.
           </p>
           <p>
-            Over eight years of rigorous courtroom practice, he has cultivated a formidable reputation for meticulous trial preparation, incisive pleadings, and persuasive oral advocacy. His chambers specialize in Criminal Defence (NDPS Act, POCSO & Sessions trials), Family & Matrimonial disputes, Cyber Crimes (IT Act & digital fraud), MACT accident claims, Medico-Legal negligence, strategic Legal Notice drafting, and alternative dispute resolution through Mediation.
+            Over eight years of courtroom practice, he has cultivated a formidable reputation for meticulous trial preparation, incisive pleadings, and persuasive oral advocacy. His chambers specialize in Criminal Defence (NDPS Act, POCSO & Sessions trials), Family & Matrimonial disputes, Cyber Crimes (IT Act & digital fraud), MACT accident claims, Medico-Legal negligence, strategic Legal Notice drafting, and alternative dispute resolution through Mediation.
           </p>
           <p>
             Every brief undertaken at the chambers receives uncompromised personal diligence, prioritizing practical, ethical, and commercially sensible solutions over protracted adversarial deadlocks.
@@ -70,7 +70,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
             <GraduationCap className="w-5 h-5 text-[#F5F2EA] shrink-0 mt-0.5" />
             <div>
               <span className="text-[11px] font-sans font-medium text-white block">LL.B (Hons)</span>
-              <span className="text-[10px] text-[#A5A5A5]">Government Law College, Ernakulam</span>
+              <span className="text-[10px] text-[#A5A5A5]">Premier Law College Alumni</span>
             </div>
           </div>
 

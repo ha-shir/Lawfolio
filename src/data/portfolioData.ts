@@ -199,21 +199,21 @@ export const selectedCasesData: CaseStudy[] = [
 export const testimonialsData: Testimonial[] = [
   {
     id: 'testimonial-1',
-    quote: 'When my brother was wrongfully implicated in a grave NDPS case, Arjun’s deep grasp of procedural law and courageous bail arguments before the High Court saved our family.',
+    quote: 'When my brother was wrongfully implicated in a grave NDPS case, Adv. Ajmal’s deep grasp of procedural law and courageous bail arguments before the High Court saved our family.',
     clientRole: 'Client Family, Ernakulam',
     caseType: 'Criminal Defence (NDPS Bail)',
     year: '2025',
   },
   {
     id: 'testimonial-2',
-    quote: 'Following my husband’s fatal road accident, Adv. Arjun handled our MACT case with utmost compassion and secured the maximum compensation our children needed for their future.',
+    quote: 'Following my husband’s fatal road accident, Adv. Ajmal handled our MACT case with utmost compassion and secured the maximum compensation our children needed for their future.',
     clientRole: 'Beneficiary & Homemaker',
     caseType: 'MACT Claim Tribunal Decree',
     year: '2025',
   },
   {
     id: 'testimonial-3',
-    quote: 'Instead of letting our family dispute turn into a 10-year bitter court war, Arjun guided us through mediation. Both sides walked away with peace and an honourable agreement.',
+    quote: 'Instead of letting our family dispute turn into a 10-year bitter court war, Ajmal guided us through mediation. Both sides walked away with peace and an honourable agreement.',
     clientRole: 'Co-Sharer & Senior Executive',
     caseType: 'Family Settlement via Mediation',
     year: '2024',

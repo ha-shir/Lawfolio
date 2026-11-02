@@ -17,14 +17,14 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* Left: Monogram and Advocate Details (4 cols) */}
           <div className="md:col-span-4 flex items-center gap-4">
             <div className="w-11 h-11 rounded-sm bg-[#151515] border border-white/15 flex items-center justify-center shrink-0">
-              <span className="font-editorial text-xl tracking-wider text-[#F5F2EA] font-semibold italic">
-                AM
+              <span className="font-editorial text-sm tracking-wider text-[#F5F2EA] font-semibold italic">
+                MAK
               </span>
             </div>
 
             <div className="flex flex-col text-left">
               <span className="font-editorial text-lg text-[#F5F2EA] tracking-wide font-medium leading-none">
-                Adv. Arjun Menon
+                Adv. Muhammad Ajmal KTV
               </span>
               <span className="text-[10px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase mt-1">
                 Advocate
@@ -43,11 +43,11 @@ export const Footer: React.FC<FooterProps> = () => {
             </a>
 
             <a
-              href="mailto:contact@arjunmenon.in"
+              href="mailto:contact@ajmalktv.in"
               className="flex items-center gap-2 hover:text-[#F5F2EA] transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-white/60" />
-              <span>contact@arjunmenon.in</span>
+              <span>contact@ajmalktv.in</span>
             </a>
 
             <div className="flex items-center gap-2 text-[#A5A5A5]">
@@ -108,7 +108,7 @@ export const Footer: React.FC<FooterProps> = () => {
         {/* Bottom Disclaimer & Legal Notice */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] font-sans text-[#A5A5A5]/80">
           <p>
-            © {new Date().getFullYear()} Adv. Arjun Menon. All rights reserved.
+            © {new Date().getFullYear()} Adv. Muhammad Ajmal KTV. All rights reserved.
           </p>
 
           <p className="max-w-xl text-center md:text-right text-[10px] text-[#A5A5A5]/60 leading-normal">

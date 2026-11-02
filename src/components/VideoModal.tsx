@@ -44,7 +44,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
           {/* Background image & mood */}
           <img
             src="/advocate-portrait.jpg"
-            alt="Adv. Arjun Menon Chamber Intro"
+            alt="Adv. Muhammad Ajmal KTV Chamber Intro"
             className="w-full h-full object-cover grayscale brightness-75 contrast-125"
           />
 

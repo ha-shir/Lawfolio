@@ -72,7 +72,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
             ))}
 
             <p className="pt-2 text-white/70 italic font-editorial text-base">
-              “Procedural vigilance at the inception of a legal controversy is often the decisive factor between prolonged stalemate and swift resolution.” — Adv. Arjun Menon
+              “Procedural vigilance at the inception of a legal controversy is often the decisive factor between prolonged stalemate and swift resolution.” — Adv. Muhammad Ajmal KTV
             </p>
           </div>
 
