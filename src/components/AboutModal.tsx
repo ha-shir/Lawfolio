@@ -30,11 +30,11 @@ export const AboutModal: React.FC<AboutModalProps> = ({
 
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 rounded-full overflow-hidden border border-white/20 shrink-0 bg-[#151515]">
+          <div className="w-16 h-16 rounded-full overflow-hidden border border-white/20 shrink-0 bg-[#0B0B0B]">
             <img
-              src="/advocate-portrait.jpg"
+              src="/advocate-real.jpg"
               alt="Adv. Arjun Menon"
-              className="w-full h-full object-cover object-top grayscale"
+              className="w-full h-full object-cover object-[50%_25%] grayscale"
             />
           </div>
 
@@ -57,7 +57,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
             Adv. Arjun Menon is an independent litigating advocate practicing before the High Court of Kerala, District & Sessions Courts, and specialized statutory tribunals. He enrolled with the Bar Council of Kerala following his legal education at the prestigious Government Law College, Ernakulam.
           </p>
           <p>
-            Over eight years of rigorous courtroom practice, he has cultivated reputation for meticulous legal research, incisive pleadings, and persuasive oral advocacy. His chambers handle contentious civil litigation, complex property partition and title disputes, statutory corporate regulatory compliance, and high-stakes criminal defence matters.
+            Over eight years of rigorous courtroom practice, he has cultivated a formidable reputation for meticulous trial preparation, incisive pleadings, and persuasive oral advocacy. His chambers specialize in Criminal Defence (NDPS Act, POCSO & Sessions trials), Family & Matrimonial disputes, Cyber Crimes (IT Act & digital fraud), MACT accident claims, Medico-Legal negligence, strategic Legal Notice drafting, and alternative dispute resolution through Mediation.
           </p>
           <p>
             Every brief undertaken at the chambers receives uncompromised personal diligence, prioritizing practical, ethical, and commercially sensible solutions over protracted adversarial deadlocks.

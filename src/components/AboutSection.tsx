@@ -33,7 +33,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
-          {/* Left Column: Lady Justice Organic/Circular Image (4 cols on desktop) */}
+          {/* Left Column: Real Advocate Portrait Organic/Circular Image (4 cols on desktop) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -44,18 +44,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
             <div className="relative group">
               {/* Circular border ring */}
               <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border border-[#0B0B0B]/20 p-2 bg-[#F5F2EA] shadow-xl">
-                <div className="w-full h-full rounded-full overflow-hidden bg-[#151515]">
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#0B0B0B]">
                   <img
-                    src="/lady-justice.jpg"
-                    alt="Statue of Lady Justice - Upholding Law and Equity"
-                    className="w-full h-full object-cover object-center grayscale contrast-125 brightness-95 transition-transform duration-700 group-hover:scale-105"
+                    src="/advocate-real.jpg"
+                    alt="Adv. Arjun Menon - Advocate High Court of Kerala"
+                    className="w-full h-full object-cover object-[50%_25%] grayscale contrast-[1.08] brightness-[0.98] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>
 
               {/* Minimal floating badge */}
               <div className="absolute -bottom-2 right-4 bg-[#0B0B0B] text-white px-3.5 py-1.5 rounded-full text-[10px] font-sans tracking-widest uppercase border border-white/20 shadow-lg hidden sm:block">
-                Lex & Justitia
+                Advocate • High Court
               </div>
             </div>
           </motion.div>
