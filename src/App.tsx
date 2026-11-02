@@ -31,7 +31,7 @@ import { PracticeArea, CaseStudy, Article } from './types';
 export default function App() {
   // Modal states
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const [consultationArea, setConsultationArea] = useState<string>('Criminal Law');
+  const [consultationArea, setConsultationArea] = useState<string>('Criminal Cases');
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [selectedPracticeArea, setSelectedPracticeArea] = useState<PracticeArea | null>(null);

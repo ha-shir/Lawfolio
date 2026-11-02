@@ -9,19 +9,19 @@ interface AboutSectionProps {
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) => {
   const credentials = [
     {
-      title: 'LL.B, Government Law College',
-      subtitle: 'Graduated with distinction in jurisprudence',
-      icon: <GraduationCap className="w-5 h-5 text-[#0B0B0B]" strokeWidth={1.5} />,
-    },
-    {
-      title: '8+ Years of Practice',
-      subtitle: 'Bar Council of Kerala & High Court',
+      title: 'Criminal & Trial Specialist',
+      subtitle: 'NDPS, POCSO, Sessions Trials & High Court Bail',
       icon: <Gavel className="w-5 h-5 text-[#0B0B0B]" strokeWidth={1.5} />,
     },
     {
-      title: 'Result-Oriented Approach',
-      subtitle: 'Uncompromising integrity and precision',
+      title: 'Certified Dispute Mediator',
+      subtitle: 'Amicable Family & Out-of-Court Settlements',
       icon: <Award className="w-5 h-5 text-[#0B0B0B]" strokeWidth={1.5} />,
+    },
+    {
+      title: 'MACT & Medical Legal Counsel',
+      subtitle: 'Tribunal Claims, Negligence & Consumer Forums',
+      icon: <GraduationCap className="w-5 h-5 text-[#0B0B0B]" strokeWidth={1.5} />,
     },
   ];
 
@@ -103,7 +103,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
             transition={{ duration: 0.7, delay: 0.25 }}
             className="lg:col-span-4 flex flex-col space-y-6 sm:space-y-7 lg:border-l lg:border-[#0B0B0B]/15 lg:pl-8"
           >
-            {credentials.map((cred, idx) => (
+            {credentials.map((cred) => (
               <div key={cred.title} className="flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-sm bg-white/40 border border-[#0B0B0B]/15 flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0B0B0B] group-hover:border-[#0B0B0B] group-hover:text-white">
                   <div className="group-hover:filter group-hover:invert transition-all">

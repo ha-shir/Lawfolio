@@ -2,9 +2,10 @@ export interface PracticeArea {
   id: string;
   number: string;
   title: string;
+  subtitle?: string;
   description: string;
   extendedDescription: string;
-  iconName: 'scales' | 'file-text' | 'building' | 'home';
+  iconName: 'scales' | 'file-text' | 'building' | 'home' | 'users' | 'laptop' | 'car' | 'stethoscope' | 'handshake';
   keyServices: string[];
 }
 

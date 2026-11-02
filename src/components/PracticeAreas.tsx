@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Scale, FileText, Building2, Home, ArrowRight } from 'lucide-react';
+import { Scale, Users, Laptop, Car, FileText, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PracticeArea } from '../types';
 
@@ -12,8 +12,10 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
   practiceAreas,
   onSelectPracticeArea,
 }) => {
-  // Let default active card be the first one (Criminal Law) as shown in reference design
-  const [activeCardId, setActiveCardId] = useState<string>('criminal-law');
+  // Let default active card be the 3rd card (Cyber Crimes / Corporate) or 1st card as seen in screenshots
+  const [activeCardId, setActiveCardId] = useState<string>(
+    practiceAreas[2]?.id || practiceAreas[0]?.id || 'criminal-cases'
+  );
 
   const renderIcon = (iconName: PracticeArea['iconName'], isActive: boolean) => {
     const className = `w-6 h-6 transition-colors duration-300 ${
@@ -23,16 +25,21 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
     switch (iconName) {
       case 'scales':
         return <Scale className={className} strokeWidth={1.5} />;
+      case 'users':
+        return <Users className={className} strokeWidth={1.5} />;
+      case 'laptop':
+        return <Laptop className={className} strokeWidth={1.5} />;
+      case 'car':
+        return <Car className={className} strokeWidth={1.5} />;
       case 'file-text':
         return <FileText className={className} strokeWidth={1.5} />;
-      case 'building':
-        return <Building2 className={className} strokeWidth={1.5} />;
-      case 'home':
-        return <Home className={className} strokeWidth={1.5} />;
       default:
         return <Scale className={className} strokeWidth={1.5} />;
     }
   };
+
+  // Display the top 4 prioritized cards
+  const displayedCards = practiceAreas.slice(0, 4);
 
   return (
     <section
@@ -70,7 +77,7 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
           {/* Right Column: 4 Cards (Horizontal row on desktop, 2-col on tablet/mobile) */}
           <div className="lg:col-span-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-4.5">
-              {practiceAreas.map((area, index) => {
+              {displayedCards.map((area, index) => {
                 const isActive = activeCardId === area.id;
 
                 return (
@@ -88,7 +95,7 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
                         : 'bg-[#F5F2EA] text-[#0B0B0B] border border-[#0B0B0B]/20 hover:border-[#0B0B0B]/60 hover:shadow-lg'
                     }`}
                   >
-                    {/* Top: Icon */}
+                    {/* Top: Icon & Number */}
                     <div className="flex items-start justify-between w-full">
                       <div className="p-1">
                         {renderIcon(area.iconName, isActive)}

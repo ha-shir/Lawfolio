@@ -18,7 +18,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     fullName: '',
     phone: '',
     email: '',
-    practiceArea: preselectedPracticeArea || 'Criminal Law',
+    practiceArea: preselectedPracticeArea || 'Criminal Cases (NDPS, POCSO & All Types)',
     preferredDate: '',
     preferredTime: '10:30 AM',
     summary: '',
@@ -211,11 +211,13 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
                     className="w-full bg-[#151515] border border-white/15 focus:border-[#F5F2EA] rounded-sm px-3 py-2.5 text-sm text-white focus:outline-none transition-colors"
                   >
-                    <option value="Criminal Law">Criminal Law</option>
-                    <option value="Civil Law">Civil Law</option>
-                    <option value="Corporate Law">Corporate Law</option>
-                    <option value="Property Law">Property Law</option>
-                    <option value="Constitutional Writ">Constitutional Writ</option>
+                    <option value="Criminal Cases (NDPS, POCSO & All Types)">Criminal Cases (NDPS, POCSO & All Types)</option>
+                    <option value="Family Cases (Matrimonial & Custody)">Family Cases (Matrimonial & Custody)</option>
+                    <option value="Cyber Crimes & IT Act">Cyber Crimes & IT Act</option>
+                    <option value="MACT Cases (Motor Accident Claims)">MACT Cases (Motor Accident Claims)</option>
+                    <option value="Medical Legal Cases">Medical Legal Cases</option>
+                    <option value="Legal Notice Drafting & Response">Legal Notice Drafting & Response</option>
+                    <option value="Mediation & Dispute Settlement">Mediation & Dispute Settlement</option>
                     <option value="General Legal Advisory">General Legal Advisory</option>
                   </select>
                 </div>
