@@ -18,8 +18,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
         {/* Soft slow-moving ambient light radial */}
         <motion.div
           animate={{
-            opacity: [0.08, 0.16, 0.08],
-            scale: [1, 1.08, 1],
+            opacity: [0.06, 0.14, 0.06],
+            scale: [1, 1.06, 1],
           }}
           transition={{
             duration: 12,
@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
         />
 
         {/* Subtle grid and column silhouettes */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.06),transparent_70%)]" />
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.05),transparent_70%)]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full relative z-10">
@@ -41,7 +41,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 flex flex-col justify-center text-left max-w-2xl"
+            className="lg:col-span-7 flex flex-col justify-center text-left max-w-2xl relative z-20"
           >
             {/* Small uppercase label */}
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
@@ -90,37 +90,54 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             </div>
           </motion.div>
 
-          {/* Right Column: Large Advocate Monochrome Portrait (5 cols on desktop) */}
+          {/* Right Column: Seamlessly Blended Advocate Monochrome Portrait (5 cols on desktop) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center lg:justify-end"
+            transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative mt-4 lg:mt-0 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[420px] sm:max-w-[460px] lg:max-w-none">
-              {/* Background ambient lighting vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/80 via-transparent to-transparent z-10 pointer-events-none hidden lg:block" />
-              <div className="absolute -bottom-2 left-0 right-0 h-28 bg-gradient-to-t from-[#0B0B0B] to-transparent z-20 pointer-events-none" />
+            {/* Ambient soft backlight behind portrait */}
+            <div className="absolute -inset-10 bg-[radial-gradient(circle_at_50%_45%,rgba(245,242,234,0.06),transparent_70%)] pointer-events-none blur-2xl" />
 
-              {/* Subtle architectural border frame */}
-              <div className="relative overflow-hidden rounded-sm border border-white/10 bg-[#151515] shadow-2xl group">
+            {/* Seamless blended container without any border or box */}
+            <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[520px] select-none group">
+              
+              {/* Outer feathered mask container */}
+              <div
+                className="relative overflow-hidden"
+                style={{
+                  WebkitMaskImage:
+                    'radial-gradient(ellipse 92% 86% at 52% 46%, black 42%, rgba(0,0,0,0.85) 65%, transparent 100%)',
+                  maskImage:
+                    'radial-gradient(ellipse 92% 86% at 52% 46%, black 42%, rgba(0,0,0,0.85) 65%, transparent 100%)',
+                }}
+              >
                 <img
                   src="/advocate-portrait.jpg"
                   alt="Adv. Arjun Menon - Advocate High Court of Kerala"
-                  className="w-full h-auto aspect-[4/5] object-cover object-top grayscale contrast-[1.08] brightness-[0.96] transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+                  className="w-full h-auto aspect-[4/5] sm:aspect-[4/5] object-cover object-top grayscale contrast-[1.12] brightness-[0.93] transition-transform duration-1000 ease-out group-hover:scale-[1.015]"
                   loading="eager"
                 />
 
-                {/* Subtle soft gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/20 to-transparent opacity-80" />
-                
-                {/* Subtle Advocate Badge in corner on mobile */}
-                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 lg:hidden bg-black/60 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#F5F2EA] animate-pulse" />
-                  <span className="text-[10px] font-sans tracking-widest uppercase text-[#F5F2EA]">Advocate • High Court</span>
-                </div>
+                {/* 1. Left Gradient Fade (blends seamlessly into text area on desktop) */}
+                <div className="absolute inset-y-0 left-0 w-32 sm:w-48 bg-gradient-to-r from-[#0B0B0B] via-[#0B0B0B]/80 to-transparent pointer-events-none" />
+
+                {/* 2. Bottom Gradient Fade (melts completely into the black Stats Bar below) */}
+                <div className="absolute inset-x-0 bottom-0 h-36 sm:h-52 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/85 to-transparent pointer-events-none" />
+
+                {/* 3. Top Gradient Fade (melts softly into the header/navbar area) */}
+                <div className="absolute inset-x-0 top-0 h-28 sm:h-40 bg-gradient-to-b from-[#0B0B0B] via-[#0B0B0B]/75 to-transparent pointer-events-none" />
+
+                {/* 4. Right Gradient Fade (melts towards the screen edge) */}
+                <div className="absolute inset-y-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#0B0B0B] via-[#0B0B0B]/75 to-transparent pointer-events-none" />
+
+                {/* 5. Radial Vignette for perfectly organic edges */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#0B0B0B_98%)] pointer-events-none" />
               </div>
+
+              {/* Floor ambient shadow beneath the portrait */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-4/5 h-12 bg-black blur-xl pointer-events-none" />
             </div>
           </motion.div>
 
