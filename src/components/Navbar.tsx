@@ -71,56 +71,73 @@ export const Navbar: React.FC<NavbarProps> = ({
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#C5A880]/15 shadow-2xl py-3 sm:py-3.5'
-            : 'bg-[#0B0B0B]/90 backdrop-blur-sm border-b border-white/[0.06] py-4 sm:py-4.5'
+            ? 'bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#C5A880]/15 shadow-2xl py-2.5 sm:py-3.5'
+            : 'bg-[#0B0B0B]/90 backdrop-blur-sm border-b border-white/[0.06] py-3.5 sm:py-4.5'
         }`}
       >
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
-          {/* Left invisible spacer to balance the right hamburger button */}
-          <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between min-h-[48px] sm:min-h-[56px]">
+          {/* Left spacer to ensure balanced layout */}
+          <div className="w-8 sm:w-10 md:w-12 h-9 sm:h-10 opacity-0 pointer-events-none flex-shrink-0" aria-hidden="true" />
 
-          {/* Center: Advocate Name & Subtitle (Mathematically Centered) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
+          {/* Center: Advocate Name & Subtitle (Mathematically Centered, Overlap-Protected) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto max-w-[46vw] sm:max-w-[52vw] md:max-w-none">
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
               className="group inline-flex flex-col items-center justify-center focus:outline-none"
             >
-              <span className="font-editorial text-base sm:text-xl md:text-2xl text-white font-medium tracking-wide leading-tight group-hover:text-[#F5F2EA] transition-colors whitespace-nowrap">
+              <span className="font-editorial text-[13px] min-[400px]:text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-medium tracking-wide leading-tight group-hover:text-[#F5F2EA] transition-colors whitespace-nowrap truncate max-w-full">
                 Adv. Muhammad Ajmal KTV
               </span>
-              <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 mt-0.5 sm:mt-1">
-                <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
-                <span className="text-[8.5px] sm:text-[10px] md:text-[10.5px] font-sans font-medium tracking-[0.3em] sm:tracking-[0.34em] text-[#C5A880] uppercase select-none">
+              <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3.5 mt-0.5 sm:mt-1">
+                <span className="h-[1px] w-3 min-[400px]:w-5 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                <span className="text-[7.5px] min-[400px]:text-[8.5px] sm:text-[10px] md:text-[10.5px] font-sans font-medium tracking-[0.24em] sm:tracking-[0.32em] text-[#C5A880] uppercase select-none whitespace-nowrap">
                   ADVOCATE
                 </span>
-                <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                <span className="h-[1px] w-3 min-[400px]:w-5 sm:w-10 md:w-14 bg-[#C5A880]/90" />
               </div>
             </a>
           </div>
 
-          {/* Right: Minimal Hamburger Button with Gold Accent */}
-          <div className="flex items-center justify-end z-20">
+          {/* Right: Book a Consultation & Minimal Hamburger Menu in a Horizontal Row */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 z-20">
+            {/* BOOK A CONSULTATION Button */}
+            <button
+              type="button"
+              onClick={onOpenConsultation}
+              className="h-9 sm:h-10 md:h-10.5 px-2.5 sm:px-3.5 md:px-4.5 rounded-lg border border-[#C5A880]/50 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/15 text-[#F5F2EA] flex items-center gap-1.5 sm:gap-2 transition-all duration-300 group cursor-pointer shadow-sm active:scale-95 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40"
+              aria-label="Book a consultation"
+            >
+              <Calendar className="w-3.5 h-3.5 text-[#C5A880] group-hover:text-white transition-colors duration-300 flex-shrink-0" />
+              <span className="font-sans font-medium text-[9.5px] sm:text-[11px] md:text-xs tracking-[0.14em] sm:tracking-[0.18em] uppercase text-[#F5F2EA] group-hover:text-white transition-colors whitespace-nowrap">
+                <span className="hidden sm:inline">BOOK A </span>
+                <span className="hidden min-[420px]:inline sm:hidden">BOOK </span>
+                <span className="inline min-[380px]:hidden">CONSULT</span>
+                <span className="hidden min-[380px]:inline">CONSULTATION</span>
+              </span>
+            </button>
+
+            {/* Hamburger Button with Rounded-Square Gold Border */}
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-[#C5A880]/60 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/10 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40 cursor-pointer shadow-sm group active:scale-95"
+              className="w-9 h-9 sm:w-10 sm:h-10 md:w-10.5 md:h-10.5 rounded-lg border border-[#C5A880]/60 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/15 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40 cursor-pointer shadow-sm group active:scale-95 flex-shrink-0"
               aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={menuOpen}
             >
               <div className="w-5 h-5 relative flex items-center justify-center">
                 <span
-                  className={`absolute w-5 h-[1.5px] bg-[#C5A880] transition-all duration-300 ease-in-out ${
+                  className={`absolute w-4.5 sm:w-5 h-[1.5px] bg-[#C5A880] transition-all duration-300 ease-in-out ${
                     menuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
                   }`}
                 />
                 <span
-                  className={`absolute w-5 h-[1.5px] bg-[#C5A880] transition-all duration-200 ease-in-out ${
+                  className={`absolute w-4.5 sm:w-5 h-[1.5px] bg-[#C5A880] transition-all duration-200 ease-in-out ${
                     menuOpen ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'
                   }`}
                 />
                 <span
-                  className={`absolute w-5 h-[1.5px] bg-[#C5A880] transition-all duration-300 ease-in-out ${
+                  className={`absolute w-4.5 sm:w-5 h-[1.5px] bg-[#C5A880] transition-all duration-300 ease-in-out ${
                     menuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
                   }`}
                 />
@@ -141,41 +158,60 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="fixed inset-0 z-50 bg-[#0B0B0B]/98 backdrop-blur-2xl flex flex-col justify-between overflow-y-auto no-scrollbar"
           >
             {/* Overlay Top Bar (Seamless alignment with top header) */}
-            <div className="w-full border-b border-white/[0.06] bg-[#0B0B0B]/60 py-4 sm:py-4.5">
-              <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0" aria-hidden="true" />
+            <div className="w-full border-b border-white/[0.06] bg-[#0B0B0B]/60 py-2.5 sm:py-3.5">
+              <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between min-h-[48px] sm:min-h-[56px]">
+                <div className="w-8 sm:w-10 md:w-12 h-9 sm:h-10 opacity-0 pointer-events-none flex-shrink-0" aria-hidden="true" />
 
                 {/* Centered advocate name inside overlay */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto max-w-[46vw] sm:max-w-[52vw] md:max-w-none">
                   <a
                     href="#home"
                     onClick={(e) => handleNavClick(e, '#home')}
                     className="group inline-flex flex-col items-center justify-center focus:outline-none"
                   >
-                    <span className="font-editorial text-base sm:text-xl md:text-2xl text-white font-medium tracking-wide leading-tight group-hover:text-[#F5F2EA] transition-colors whitespace-nowrap">
+                    <span className="font-editorial text-[13px] min-[400px]:text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-medium tracking-wide leading-tight group-hover:text-[#F5F2EA] transition-colors whitespace-nowrap truncate max-w-full">
                       Adv. Muhammad Ajmal KTV
                     </span>
-                    <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 mt-0.5 sm:mt-1">
-                      <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
-                      <span className="text-[8.5px] sm:text-[10px] md:text-[10.5px] font-sans font-medium tracking-[0.3em] sm:tracking-[0.34em] text-[#C5A880] uppercase select-none">
+                    <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3.5 mt-0.5 sm:mt-1">
+                      <span className="h-[1px] w-3 min-[400px]:w-5 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                      <span className="text-[7.5px] min-[400px]:text-[8.5px] sm:text-[10px] md:text-[10.5px] font-sans font-medium tracking-[0.24em] sm:tracking-[0.32em] text-[#C5A880] uppercase select-none whitespace-nowrap">
                         ADVOCATE
                       </span>
-                      <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                      <span className="h-[1px] w-3 min-[400px]:w-5 sm:w-10 md:w-14 bg-[#C5A880]/90" />
                     </div>
                   </a>
                 </div>
 
-                {/* Close Button in exact same position as header button */}
-                <div className="flex items-center justify-end z-20">
+                {/* Right buttons inside overlay top bar */}
+                <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 z-20">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      onOpenConsultation();
+                    }}
+                    className="h-9 sm:h-10 md:h-10.5 px-2.5 sm:px-3.5 md:px-4.5 rounded-lg border border-[#C5A880]/50 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/15 text-[#F5F2EA] flex items-center gap-1.5 sm:gap-2 transition-all duration-300 group cursor-pointer shadow-sm active:scale-95 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40"
+                    aria-label="Book a consultation"
+                  >
+                    <Calendar className="w-3.5 h-3.5 text-[#C5A880] group-hover:text-white transition-colors duration-300 flex-shrink-0" />
+                    <span className="font-sans font-medium text-[9.5px] sm:text-[11px] md:text-xs tracking-[0.14em] sm:tracking-[0.18em] uppercase text-[#F5F2EA] group-hover:text-white transition-colors whitespace-nowrap">
+                      <span className="hidden sm:inline">BOOK A </span>
+                      <span className="hidden min-[420px]:inline sm:hidden">BOOK </span>
+                      <span className="inline min-[380px]:hidden">CONSULT</span>
+                      <span className="hidden min-[380px]:inline">CONSULTATION</span>
+                    </span>
+                  </button>
+
+                  {/* Close Button in exact same position as hamburger button */}
                   <button
                     type="button"
                     onClick={() => setMenuOpen(false)}
-                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-[#C5A880]/60 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/10 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40 cursor-pointer shadow-sm group active:scale-95"
+                    className="w-9 h-9 sm:w-10 sm:h-10 md:w-10.5 md:h-10.5 rounded-lg border border-[#C5A880]/60 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/15 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40 cursor-pointer shadow-sm group active:scale-95 flex-shrink-0"
                     aria-label="Close navigation menu"
                   >
                     <div className="w-5 h-5 relative flex items-center justify-center">
-                      <span className="absolute w-5 h-[1.5px] bg-[#C5A880] rotate-45 transition-transform duration-300" />
-                      <span className="absolute w-5 h-[1.5px] bg-[#C5A880] -rotate-45 transition-transform duration-300" />
+                      <span className="absolute w-4.5 sm:w-5 h-[1.5px] bg-[#C5A880] rotate-45 transition-transform duration-300" />
+                      <span className="absolute w-4.5 sm:w-5 h-[1.5px] bg-[#C5A880] -rotate-45 transition-transform duration-300" />
                     </div>
                   </button>
                 </div>
@@ -215,7 +251,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 ))}
               </nav>
 
-              {/* Action Buttons */}
+              {/* Action Buttons inside overlay */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
