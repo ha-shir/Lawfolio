@@ -61,12 +61,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
 
   return (
     <>
-      {/* Top Fixed Header with bottom divider line */}
+      {/* Top Fixed Header: borders & background hidden on hero section, revealed on scroll */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/15 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0B0B0B]/95 backdrop-blur-md shadow-2xl py-3'
-            : 'bg-[#0B0B0B]/90 backdrop-blur-sm py-3.5 sm:py-4'
+            ? 'bg-[#0B0B0B]/95 backdrop-blur-md border-b border-white/15 shadow-2xl py-3'
+            : 'bg-transparent border-b border-transparent py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
