@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-6 xl:col-span-6 relative mt-6 lg:mt-0 flex justify-center lg:justify-end -translate-y-[20px]"
+            className="lg:col-span-6 xl:col-span-6 relative mt-6 lg:mt-0 flex justify-center lg:justify-end -translate-y-[50px]"
           >
             {/* Seamless blended container matching reference composition */}
             <div className="relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-[580px] xl:max-w-[620px] select-none group">
