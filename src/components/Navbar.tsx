@@ -4,14 +4,10 @@ import { Calendar, ArrowUpRight, Phone, Mail } from 'lucide-react';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
-  isIPhonePreview?: boolean;
-  onToggleIPhonePreview?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenConsultation,
-  isIPhonePreview,
-  onToggleIPhonePreview,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -270,19 +266,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <Calendar className="w-4 h-4" />
                   <span>Book a Consultation</span>
                 </button>
-
-                {onToggleIPhonePreview && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMenuOpen(false);
-                      onToggleIPhonePreview();
-                    }}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-sans tracking-wide bg-white/5 hover:bg-white/10 text-[#EAE5DA] border border-white/10 transition-colors cursor-pointer"
-                  >
-                    <span>{isIPhonePreview ? '🖥️ Desktop View' : '📱 iPhone Frame Preview'}</span>
-                  </button>
-                )}
               </motion.div>
             </div>
 
