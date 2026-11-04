@@ -9,6 +9,7 @@ import { LatestArticles } from './components/LatestArticles';
 import { FinalConsultationCTA } from './components/FinalConsultationCTA';
 import { Footer } from './components/Footer';
 import { MobileControlBar } from './components/MobileControlBar';
+import { WhatsAppButton } from './components/WhatsAppButton';
 import { ConsultationModal } from './components/ConsultationModal';
 import { VideoModal } from './components/VideoModal';
 import { PracticeModal } from './components/PracticeModal';
@@ -88,6 +89,9 @@ export default function App() {
 
         {/* 10. Floating Mobile Control Bar */}
         <MobileControlBar onOpenConsultation={() => handleOpenConsultation()} />
+
+        {/* 11. Floating WhatsApp Button (Desktop bottom-right & Mobile bottom-right) */}
+        <WhatsAppButton />
       </div>
 
       {/* Interactive Modals */}

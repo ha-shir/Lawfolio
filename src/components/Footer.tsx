@@ -27,11 +27,11 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* Middle: Contact Coordinates (5 cols) */}
           <div className="md:col-span-5 flex flex-col min-[420px]:flex-row flex-wrap md:flex-nowrap items-start min-[420px]:items-center gap-3.5 sm:gap-6 md:gap-8 text-xs font-sans text-[#A5A5A5]">
             <a
-              href="tel:+919876543210"
+              href="tel:+918075110582"
               className="flex items-center gap-2 hover:text-[#F5F2EA] transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-white/60 shrink-0" />
-              <span>+91 98765 43210</span>
+              <span>+91 80751 10582</span>
             </a>
 
             <a

@@ -268,11 +268,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             >
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918075110582"
                   className="flex items-center gap-2 hover:text-[#C5A880] transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#C5A880]" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 80751 10582</span>
                 </a>
                 <a
                   href="mailto:contact@ajmalktv.in"
