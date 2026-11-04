@@ -69,8 +69,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
             className="lg:col-span-4 flex flex-col justify-center text-left"
           >
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-[1px] bg-[#0B0B0B]/40" />
-              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
+              <span className="w-8 h-[1px] bg-[#0B0B0B]/60" />
+              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B] uppercase font-bold">
                 About
               </span>
             </div>
@@ -79,7 +79,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
               Adv. Muhammad Ajmal KTV
             </h2>
 
-            <p className="text-[13.5px] sm:text-base font-sans text-[#0B0B0B]/80 font-light leading-relaxed mb-6">
+            <p className="text-[13.5px] sm:text-base font-sans text-[#0B0B0B] font-medium leading-relaxed mb-6">
               A practicing advocate committed to upholding justice with integrity, clarity and practical insight.
             </p>
 
@@ -115,7 +115,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                   <h4 className="font-editorial text-base sm:text-lg font-medium text-[#0B0B0B] tracking-tight">
                     {cred.title}
                   </h4>
-                  <p className="text-xs font-sans text-[#0B0B0B]/60 font-light mt-0.5">
+                  <p className="text-xs font-sans text-[#0B0B0B]/85 font-medium mt-0.5">
                     {cred.subtitle}
                   </p>
                 </div>

@@ -34,7 +34,8 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
           {/* Left Column: Heading */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
+              <span className="w-8 h-[1px] bg-[#0B0B0B]/60" />
+              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B] uppercase font-bold">
                 Testimonial
               </span>
             </div>
@@ -44,7 +45,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
               Experiences
             </h2>
 
-            <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm font-sans text-[#0B0B0B]/60 font-light max-w-xs">
+            <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm font-sans text-[#0B0B0B] font-medium max-w-xs leading-relaxed">
               Testimonials are published strictly in accordance with ethical transparency and prior client consent.
             </p>
           </div>
@@ -71,11 +72,11 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
                   </p>
 
                   <div className="flex items-center gap-2">
-                    <span className="w-4 h-[1px] bg-[#0B0B0B]/40" />
-                    <span className="text-xs sm:text-[13px] font-sans font-medium text-[#0B0B0B]/80 tracking-wide">
+                    <span className="w-4 h-[1px] bg-[#0B0B0B]/60" />
+                    <span className="text-xs sm:text-[13px] font-sans font-semibold text-[#0B0B0B] tracking-wide">
                       {current.clientRole}
                     </span>
-                    <span className="text-[10.5px] sm:text-[11px] font-sans text-[#0B0B0B]/40">
+                    <span className="text-[10.5px] sm:text-[11px] font-sans text-[#0B0B0B]/85 font-medium">
                       • {current.caseType}
                     </span>
                   </div>

@@ -23,7 +23,8 @@ export const LatestArticles: React.FC<LatestArticlesProps> = ({
           {/* Left Column: Heading */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
+              <span className="w-8 h-[1px] bg-[#0B0B0B]/60" />
+              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B] uppercase font-bold">
                 Insights
               </span>
             </div>
@@ -33,7 +34,7 @@ export const LatestArticles: React.FC<LatestArticlesProps> = ({
               Articles
             </h2>
 
-            <p className="text-xs sm:text-sm font-sans text-[#0B0B0B]/70 font-light leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm font-sans text-[#0B0B0B] font-medium leading-relaxed max-w-sm">
               Contemporary legal commentaries, statutory updates, and procedural guides for informed decision-making.
             </p>
           </div>
@@ -71,7 +72,7 @@ export const LatestArticles: React.FC<LatestArticlesProps> = ({
 
                   {/* Bottom: Arrow icon */}
                   <div className="mt-4 flex items-center justify-between pt-3 border-t border-[#0B0B0B]/10">
-                    <span className="text-[10px] font-sans uppercase tracking-widest text-[#0B0B0B]/60">
+                    <span className="text-[10px] font-sans uppercase tracking-widest text-[#0B0B0B] font-bold">
                       {article.category}
                     </span>
                     <div className="w-7 h-7 rounded-full flex items-center justify-center text-[#0B0B0B] group-hover:translate-x-1 transition-transform">
