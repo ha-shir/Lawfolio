@@ -96,16 +96,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             <button
               type="button"
               onClick={onOpenConsultation}
-              className="h-8.5 sm:h-10 px-2.5 min-[380px]:px-3.5 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-[11px] min-[380px]:text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 flex items-center gap-1.5 min-[380px]:gap-2 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
+              className="h-8.5 sm:h-10 px-3 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 flex items-center gap-1.5 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
               aria-label="Book a consultation"
             >
-              <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0B0B0B] shrink-0" />
-              <span className="whitespace-nowrap">
-                <span className="hidden md:inline">Book a Consultation</span>
-                <span className="hidden min-[360px]:inline md:hidden">Consult</span>
-                <span className="inline min-[360px]:hidden">Book</span>
+              <Calendar className="w-3.5 h-3.5 text-[#0B0B0B] shrink-0" />
+              <span className="whitespace-nowrap font-sans">
+                <span className="hidden sm:inline">Book a Consultation</span>
+                <span className="inline sm:hidden">Consult</span>
               </span>
-              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
+              <ArrowRight className="hidden sm:inline w-3.5 h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
             </button>
 
             {/* Hamburger Button with Rounded-Square Border */}
@@ -178,15 +177,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
                       setMenuOpen(false);
                       onOpenConsultation();
                     }}
-                    className="h-8.5 sm:h-10 px-2.5 min-[380px]:px-3.5 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-[11px] min-[380px]:text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 flex items-center gap-1.5 min-[380px]:gap-2 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
+                    className="h-8.5 sm:h-10 px-3 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 flex items-center gap-1.5 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
                   >
-                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0B0B0B] shrink-0" />
-                    <span className="whitespace-nowrap">
-                      <span className="hidden md:inline">Book a Consultation</span>
-                      <span className="hidden min-[360px]:inline md:hidden">Consult</span>
-                      <span className="inline min-[360px]:hidden">Book</span>
+                    <Calendar className="w-3.5 h-3.5 text-[#0B0B0B] shrink-0" />
+                    <span className="whitespace-nowrap font-sans">
+                      <span className="hidden sm:inline">Book a Consultation</span>
+                      <span className="inline sm:hidden">Consult</span>
                     </span>
-                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
+                    <ArrowRight className="hidden sm:inline w-3.5 h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
                   </button>
 
                   {/* Close Button in exact same position as hamburger button */}
