@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { StatsBar } from './components/StatsBar';
 import { PracticeAreas } from './components/PracticeAreas';
 import { AboutSection } from './components/AboutSection';
 import { SelectedCases } from './components/SelectedCases';
@@ -17,7 +16,6 @@ import { ArticleModal } from './components/ArticleModal';
 import { AboutModal } from './components/AboutModal';
 
 import {
-  statsData,
   practiceAreasData,
   selectedCasesData,
   testimonialsData,
@@ -56,10 +54,7 @@ export default function App() {
             onOpenVideo={() => setIsVideoOpen(true)}
           />
 
-          {/* 2. Experience & Credibility Bar */}
-          <StatsBar stats={statsData} />
-
-          {/* 3. Practice Areas Section */}
+          {/* 2. Practice Areas Section */}
           <PracticeAreas
             practiceAreas={practiceAreasData}
             onSelectPracticeArea={(area) => setSelectedPracticeArea(area)}
