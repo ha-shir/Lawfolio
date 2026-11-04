@@ -8,6 +8,7 @@ import { TestimonialSection } from './components/TestimonialSection';
 import { LatestArticles } from './components/LatestArticles';
 import { FinalConsultationCTA } from './components/FinalConsultationCTA';
 import { Footer } from './components/Footer';
+import { MobileControlBar } from './components/MobileControlBar';
 import { ConsultationModal } from './components/ConsultationModal';
 import { VideoModal } from './components/VideoModal';
 import { PracticeModal } from './components/PracticeModal';
@@ -84,6 +85,9 @@ export default function App() {
 
         {/* 9. Minimalist Footer */}
         <Footer />
+
+        {/* 10. Floating Mobile Control Bar */}
+        <MobileControlBar onOpenConsultation={() => handleOpenConsultation()} />
       </div>
 
       {/* Interactive Modals */}
