@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Menu, X, ArrowUpRight, Phone, Mail } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, ArrowUpRight, Phone, Mail } from 'lucide-react';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
@@ -13,28 +14,51 @@ export const Navbar: React.FC<NavbarProps> = ({
   onToggleIPhonePreview,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 24);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when overlay is active
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  // Handle ESC key press to close overlay
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Practice Areas', href: '#practice-areas' },
-    { label: 'Cases', href: '#cases' },
-    { label: 'Blog', href: '#insights' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '#home', number: '01' },
+    { label: 'About', href: '#about', number: '02' },
+    { label: 'Practice Areas', href: '#practice-areas', number: '03' },
+    { label: 'Cases', href: '#cases', number: '04' },
+    { label: 'Blog', href: '#insights', number: '05' },
+    { label: 'Contact', href: '#contact', number: '06' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setMobileMenuOpen(false);
+    setMenuOpen(false);
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -43,144 +67,220 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <>
+      {/* Top Fixed Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0B0B0B]/90 backdrop-blur-md border-b border-white/10 shadow-2xl py-3.5'
-            : 'bg-transparent border-b border-transparent py-5 sm:py-6'
+            ? 'bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#C5A880]/15 shadow-2xl py-3 sm:py-3.5'
+            : 'bg-[#0B0B0B]/90 backdrop-blur-sm border-b border-white/[0.06] py-4 sm:py-4.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
-          {/* Left: Monogram and Advocate Title */}
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, '#home')}
-            className="group flex items-center gap-3.5 focus:outline-none"
-          >
-            {/* MAK Monogram */}
-            <div className="w-10 h-10 rounded-sm bg-[#151515] border border-white/15 flex items-center justify-center transition-transform duration-300 group-hover:border-white/40">
-              <span className="font-editorial text-sm tracking-wider text-[#F5F2EA] font-semibold italic">
-                MAK
-              </span>
-            </div>
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
+          {/* Left invisible spacer to balance the right hamburger button */}
+          <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0" aria-hidden="true" />
 
-            <div className="flex flex-col text-left">
-              <span className="font-editorial text-base sm:text-lg text-[#F5F2EA] tracking-wide font-medium leading-none">
+          {/* Center: Advocate Name & Subtitle (Mathematically Centered) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
+            <a
+              href="#home"
+              onClick={(e) => handleNavClick(e, '#home')}
+              className="group inline-flex flex-col items-center justify-center focus:outline-none"
+            >
+              <span className="font-editorial text-base sm:text-xl md:text-2xl text-white font-medium tracking-wide leading-tight group-hover:text-[#F5F2EA] transition-colors whitespace-nowrap">
                 Adv. Muhammad Ajmal KTV
               </span>
-              <span className="text-[10px] sm:text-[11px] font-sans tracking-[0.24em] text-[#A5A5A5] uppercase mt-1">
-                Advocate
-              </span>
-            </div>
-          </a>
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 mt-0.5 sm:mt-1">
+                <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                <span className="text-[8.5px] sm:text-[10px] md:text-[10.5px] font-sans font-medium tracking-[0.3em] sm:tracking-[0.34em] text-[#C5A880] uppercase select-none">
+                  ADVOCATE
+                </span>
+                <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+              </div>
+            </a>
+          </div>
 
-          {/* Center Navigation Links - Desktop */}
-          <nav className="hidden lg:flex items-center gap-8 text-[13px] tracking-[0.06em] text-[#EAE5DA]/80">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="relative py-1 transition-colors duration-200 hover:text-white group"
-              >
-                <span>{link.label}</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#F5F2EA] transition-all duration-300 ease-out group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
-
-          {/* Right: Actions */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Device Showcase Mode Toggle (Visible on desktop/tablet) */}
-            {onToggleIPhonePreview && (
-              <button
-                type="button"
-                onClick={onToggleIPhonePreview}
-                title={isIPhonePreview ? "Switch to Fullscreen Desktop View" : "Preview in iPhone 16 Pro Mockup Frame"}
-                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-sans tracking-wide bg-white/5 hover:bg-white/10 text-[#EAE5DA] border border-white/10 transition-colors cursor-pointer"
-              >
-                <span className="text-xs">{isIPhonePreview ? '🖥️ Desktop View' : '📱 iPhone Frame'}</span>
-              </button>
-            )}
-
-            {/* Outlined "Book a Consultation" Button */}
+          {/* Right: Minimal Hamburger Button with Gold Accent */}
+          <div className="flex items-center justify-end z-20">
             <button
               type="button"
-              onClick={onOpenConsultation}
-              className="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-sm border border-[#F5F2EA]/40 text-[#F5F2EA] text-[12px] sm:text-[13px] tracking-wider uppercase font-sans hover:bg-[#F5F2EA] hover:text-[#0B0B0B] hover:border-[#F5F2EA] transition-all duration-300 group cursor-pointer shadow-sm active:scale-95"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-[#C5A880]/60 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/10 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40 cursor-pointer shadow-sm group active:scale-95"
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={menuOpen}
             >
-              <Calendar className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-6 text-[#F5F2EA] group-hover:text-[#0B0B0B]" />
-              <span className="font-medium">Book a Consultation</span>
-            </button>
-
-            {/* Mobile Hamburger Toggle Button */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#F5F2EA] hover:text-white rounded-sm focus:outline-none focus:ring-1 focus:ring-white/20 transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <div className="w-5 h-5 relative flex items-center justify-center">
+                <span
+                  className={`absolute w-5 h-[1.5px] bg-[#C5A880] transition-all duration-300 ease-in-out ${
+                    menuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
+                  }`}
+                />
+                <span
+                  className={`absolute w-5 h-[1.5px] bg-[#C5A880] transition-all duration-200 ease-in-out ${
+                    menuOpen ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'
+                  }`}
+                />
+                <span
+                  className={`absolute w-5 h-[1.5px] bg-[#C5A880] transition-all duration-300 ease-in-out ${
+                    menuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
-      <div
-        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-xl lg:hidden transition-all duration-500 ease-in-out flex flex-col justify-between p-6 pt-24 ${
-          mobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
-        }`}
-      >
-        <div className="flex flex-col gap-6 max-w-sm mx-auto w-full pt-4">
-          <div className="border-b border-white/10 pb-4">
-            <span className="text-[11px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase">
-              Navigation
-            </span>
-          </div>
+      {/* Full-Screen Luxury Navigation Overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-50 bg-[#0B0B0B]/98 backdrop-blur-2xl flex flex-col justify-between overflow-y-auto no-scrollbar"
+          >
+            {/* Overlay Top Bar (Seamless alignment with top header) */}
+            <div className="w-full border-b border-white/[0.06] bg-[#0B0B0B]/60 py-4 sm:py-4.5">
+              <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0" aria-hidden="true" />
 
-          <nav className="flex flex-col space-y-4">
-            {navLinks.map((link, idx) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                style={{ transitionDelay: `${idx * 40}ms` }}
-                className="group flex items-center justify-between text-xl font-editorial text-[#F5F2EA] hover:text-white py-1 transition-colors"
+                {/* Centered advocate name inside overlay */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto">
+                  <a
+                    href="#home"
+                    onClick={(e) => handleNavClick(e, '#home')}
+                    className="group inline-flex flex-col items-center justify-center focus:outline-none"
+                  >
+                    <span className="font-editorial text-base sm:text-xl md:text-2xl text-white font-medium tracking-wide leading-tight group-hover:text-[#F5F2EA] transition-colors whitespace-nowrap">
+                      Adv. Muhammad Ajmal KTV
+                    </span>
+                    <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 mt-0.5 sm:mt-1">
+                      <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                      <span className="text-[8.5px] sm:text-[10px] md:text-[10.5px] font-sans font-medium tracking-[0.3em] sm:tracking-[0.34em] text-[#C5A880] uppercase select-none">
+                        ADVOCATE
+                      </span>
+                      <span className="h-[1px] w-6 sm:w-10 md:w-14 bg-[#C5A880]/90" />
+                    </div>
+                  </a>
+                </div>
+
+                {/* Close Button in exact same position as header button */}
+                <div className="flex items-center justify-end z-20">
+                  <button
+                    type="button"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-[#C5A880]/60 hover:border-[#C5A880] bg-black/40 hover:bg-[#C5A880]/10 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A880]/40 cursor-pointer shadow-sm group active:scale-95"
+                    aria-label="Close navigation menu"
+                  >
+                    <div className="w-5 h-5 relative flex items-center justify-center">
+                      <span className="absolute w-5 h-[1.5px] bg-[#C5A880] rotate-45 transition-transform duration-300" />
+                      <span className="absolute w-5 h-[1.5px] bg-[#C5A880] -rotate-45 transition-transform duration-300" />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Overlay Navigation Links */}
+            <div className="max-w-4xl mx-auto w-full px-6 sm:px-12 py-8 sm:py-12 flex flex-col items-center justify-center flex-1">
+              <nav className="w-full flex flex-col items-center space-y-3 sm:space-y-5">
+                {navLinks.map((link, idx) => (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{
+                      delay: 0.05 + idx * 0.04,
+                      duration: 0.35,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="w-full text-center"
+                  >
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className="group inline-flex items-center justify-center gap-3 sm:gap-5 py-1.5 sm:py-2 transition-all duration-300 focus:outline-none"
+                    >
+                      <span className="font-sans text-[11px] sm:text-xs tracking-[0.25em] text-[#C5A880]/70 group-hover:text-[#C5A880] transition-colors">
+                        {link.number}
+                      </span>
+                      <span className="font-editorial text-2xl sm:text-4xl md:text-5xl text-white/90 group-hover:text-white font-normal tracking-wide transition-colors">
+                        {link.label}
+                      </span>
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#C5A880] opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+                    </a>
+                  </motion.div>
+                ))}
+              </nav>
+
+              {/* Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.32, duration: 0.35 }}
+                className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3.5"
               >
-                <span>{link.label}</span>
-                <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-100 transition-opacity" />
-              </a>
-            ))}
-          </nav>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    onOpenConsultation();
+                  }}
+                  className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 rounded-full border border-[#C5A880] bg-[#C5A880]/10 hover:bg-[#C5A880] text-[#F5F2EA] hover:text-[#0B0B0B] text-xs sm:text-sm tracking-wider uppercase font-sans font-medium transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[#C5A880]/20 active:scale-95"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book a Consultation</span>
+                </button>
 
-          <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenConsultation();
-              }}
-              className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-[#F5F2EA] text-[#0B0B0B] text-xs font-sans font-semibold tracking-widest uppercase rounded-sm hover:bg-white transition-colors"
+                {onToggleIPhonePreview && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      onToggleIPhonePreview();
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-sans tracking-wide bg-white/5 hover:bg-white/10 text-[#EAE5DA] border border-white/10 transition-colors cursor-pointer"
+                  >
+                    <span>{isIPhonePreview ? '🖥️ Desktop View' : '📱 iPhone Frame Preview'}</span>
+                  </button>
+                )}
+              </motion.div>
+            </div>
+
+            {/* Overlay Bottom Footer */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.38, duration: 0.35 }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-12 py-5 sm:py-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#A5A5A5]"
             >
-              <Calendar className="w-4 h-4 text-[#0B0B0B]" />
-              Book a Consultation
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu bottom contact */}
-        <div className="max-w-sm mx-auto w-full pt-6 border-t border-white/10 flex flex-col gap-2 text-xs text-[#A5A5A5]">
-          <div className="flex items-center gap-2">
-            <Phone className="w-3.5 h-3.5" />
-            <span>+91 98765 43210</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail className="w-3.5 h-3.5" />
-            <span>contact@ajmalktv.in</span>
-          </div>
-        </div>
-      </div>
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6">
+                <a
+                  href="tel:+919876543210"
+                  className="flex items-center gap-2 hover:text-[#C5A880] transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#C5A880]" />
+                  <span>+91 98765 43210</span>
+                </a>
+                <a
+                  href="mailto:contact@ajmalktv.in"
+                  className="flex items-center gap-2 hover:text-[#C5A880] transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#C5A880]" />
+                  <span>contact@ajmalktv.in</span>
+                </a>
+              </div>
+              <div className="text-[10.5px] text-[#707070] tracking-widest uppercase text-center sm:text-right">
+                Adv. Muhammad Ajmal KTV &bull; Chamber Practice
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
