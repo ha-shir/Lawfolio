@@ -100,7 +100,7 @@ export const SelectedCases: React.FC<SelectedCasesProps> = ({ cases, onSelectCas
                     {/* Bottom Status / Jurisdiction */}
                     <div className="pt-4 sm:pt-6 border-t border-white/10 flex items-center justify-between text-[10.5px] sm:text-[11px] text-[#A5A5A5]">
                       <span>{caseItem.jurisdiction.split('&')[0]}</span>
-                      <span className="text-xs text-[#F5F2EA] group-hover:underline">Read Brief →</span>
+                      <span className="text-xs text-[#F5F2EA] group-hover:underline">Discuss Case →</span>
                     </div>
                   </motion.div>
                 ))}

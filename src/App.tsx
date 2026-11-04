@@ -11,7 +11,6 @@ import { Footer } from './components/Footer';
 import { ConsultationModal } from './components/ConsultationModal';
 import { VideoModal } from './components/VideoModal';
 import { PracticeModal } from './components/PracticeModal';
-import { CaseModal } from './components/CaseModal';
 import { ArticleModal } from './components/ArticleModal';
 import { AboutModal } from './components/AboutModal';
 
@@ -22,7 +21,7 @@ import {
   articlesData,
 } from './data/portfolioData';
 
-import { PracticeArea, CaseStudy, Article } from './types';
+import { PracticeArea, Article } from './types';
 
 export default function App() {
   // Modal states
@@ -31,7 +30,6 @@ export default function App() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [selectedPracticeArea, setSelectedPracticeArea] = useState<PracticeArea | null>(null);
-  const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   const handleOpenConsultation = (areaTitle?: string) => {
@@ -66,7 +64,7 @@ export default function App() {
           {/* 5. Selected Cases Section */}
           <SelectedCases
             cases={selectedCasesData}
-            onSelectCase={(caseItem) => setSelectedCase(caseItem)}
+            onSelectCase={(caseItem) => handleOpenConsultation(caseItem.category)}
           />
 
           {/* 6. Testimonial Section */}
@@ -105,12 +103,6 @@ export default function App() {
         practiceArea={selectedPracticeArea}
         onClose={() => setSelectedPracticeArea(null)}
         onOpenConsultationWithArea={(areaTitle) => handleOpenConsultation(areaTitle)}
-      />
-
-      <CaseModal
-        caseItem={selectedCase}
-        onClose={() => setSelectedCase(null)}
-        onOpenConsultation={() => handleOpenConsultation()}
       />
 
       <ArticleModal
