@@ -189,18 +189,11 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
                           : 'bg-[#F5F2EA] text-[#0B0B0B] border border-[#0B0B0B]/20 hover:border-[#0B0B0B]/60 hover:shadow-lg'
                       }`}
                     >
-                      {/* Top: Icon & Discipline Number */}
+                      {/* Top: Icon */}
                       <div className="flex items-start justify-between w-full">
                         <div className="p-1">
                           {renderIcon(area.iconName, isActive)}
                         </div>
-                        <span
-                          className={`text-[10px] font-mono tracking-widest ${
-                            isActive ? 'text-white/40' : 'text-[#0B0B0B]/40'
-                          }`}
-                        >
-                          {area.number}
-                        </span>
                       </div>
 
                       {/* Bottom: Subtitle Tag, Title & Circle Arrow Button */}

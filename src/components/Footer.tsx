@@ -14,22 +14,14 @@ export const Footer: React.FC<FooterProps> = () => {
         {/* Main Footer Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-14 items-center">
           
-          {/* Left: Monogram and Advocate Details (4 cols) */}
-          <div className="md:col-span-4 flex items-center gap-4">
-            <div className="w-11 h-11 rounded-sm bg-[#151515] border border-white/15 flex items-center justify-center shrink-0">
-              <span className="font-editorial text-sm tracking-wider text-[#F5F2EA] font-semibold italic">
-                MAK
-              </span>
-            </div>
-
-            <div className="flex flex-col text-left">
-              <span className="font-editorial text-lg text-[#F5F2EA] tracking-wide font-medium leading-none">
-                Adv. Muhammad Ajmal KTV
-              </span>
-              <span className="text-[10px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase mt-1">
-                Advocate
-              </span>
-            </div>
+          {/* Left: Advocate Details (4 cols) */}
+          <div className="md:col-span-4 flex flex-col text-left">
+            <span className="font-editorial text-lg text-[#F5F2EA] tracking-wide font-medium leading-none">
+              Adv. Muhammad Ajmal KTV
+            </span>
+            <span className="text-[10px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase mt-1">
+              Advocate
+            </span>
           </div>
 
           {/* Middle: Contact Coordinates (5 cols) */}
