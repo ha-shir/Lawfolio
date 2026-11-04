@@ -18,8 +18,8 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-lg">
-      <div className="relative w-full max-w-3xl bg-[#0B0B0B] border border-white/20 rounded-sm overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-lg">
+      <div className="relative w-full max-w-3xl bg-[#0B0B0B] border border-white/20 rounded-sm overflow-hidden shadow-2xl my-auto max-h-[92vh] overflow-y-auto no-scrollbar">
         
         {/* Top Header */}
         <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between">

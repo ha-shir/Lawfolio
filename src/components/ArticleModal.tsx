@@ -16,8 +16,8 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
   if (!article) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
-      <div className="relative w-full max-w-2xl bg-[#0B0B0B] border border-white/20 rounded-sm shadow-2xl text-white my-8 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
+      <div className="relative w-full max-w-2xl bg-[#0B0B0B] border border-white/20 rounded-sm shadow-2xl text-white my-auto max-h-[92vh] overflow-y-auto no-scrollbar">
         
         {/* Top Image Banner */}
         <div className="relative aspect-[21/9] bg-[#151515] overflow-hidden">
@@ -32,7 +32,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="absolute top-4 right-4 bg-black/60 backdrop-blur text-white/70 hover:text-white p-1.5 rounded-full border border-white/20 transition-colors"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-black/60 backdrop-blur text-white/70 hover:text-white p-1.5 rounded-full border border-white/20 transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -40,7 +40,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
         </div>
 
         {/* Content Body */}
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-8">
           {/* Metadata */}
           <div className="flex flex-wrap items-center gap-3 text-[11px] font-sans text-[#A5A5A5] mb-3">
             <span className="uppercase tracking-widest text-[#F5F2EA] font-semibold">

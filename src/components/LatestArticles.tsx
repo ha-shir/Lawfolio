@@ -15,20 +15,20 @@ export const LatestArticles: React.FC<LatestArticlesProps> = ({
   return (
     <section
       id="insights"
-      className="bg-[#F5F2EA] text-[#0B0B0B] py-20 sm:py-28 border-b border-[#0B0B0B]/10 relative overflow-hidden"
+      className="bg-[#F5F2EA] text-[#0B0B0B] py-14 sm:py-20 lg:py-28 border-b border-[#0B0B0B]/10 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 min-[380px]:px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Heading */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
+              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
                 Insights
               </span>
             </div>
 
-            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#0B0B0B] font-medium tracking-tight mb-4">
+            <h2 className="font-editorial text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl text-[#0B0B0B] font-medium tracking-tight mb-3 sm:mb-4">
               Latest <br />
               Articles
             </h2>
@@ -40,7 +40,7 @@ export const LatestArticles: React.FC<LatestArticlesProps> = ({
 
           {/* Right Column: 3 Article Cards */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
               {articles.map((article, index) => (
                 <motion.article
                   key={article.id}

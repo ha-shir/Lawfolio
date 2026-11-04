@@ -8,29 +8,29 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = () => {
   return (
-    <footer id="contact" className="bg-[#0B0B0B] text-white pt-16 sm:pt-20 pb-12 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <footer id="contact" className="bg-[#0B0B0B] text-white pt-12 sm:pt-16 pb-10 sm:pb-12 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 min-[380px]:px-5 sm:px-8 lg:px-12">
         
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-14 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-8 pb-10 md:pb-12 items-start md:items-center">
           
           {/* Left: Advocate Details (4 cols) */}
           <div className="md:col-span-4 flex flex-col text-left">
-            <span className="font-editorial text-lg text-[#F5F2EA] tracking-wide font-medium leading-none">
+            <span className="font-editorial text-lg sm:text-xl text-[#F5F2EA] tracking-wide font-medium leading-none">
               Adv. Muhammad Ajmal KTV
             </span>
-            <span className="text-[10px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase mt-1">
+            <span className="text-[9.5px] sm:text-[10px] font-sans tracking-[0.25em] text-[#A5A5A5] uppercase mt-1">
               Advocate
             </span>
           </div>
 
           {/* Middle: Contact Coordinates (5 cols) */}
-          <div className="md:col-span-5 flex flex-wrap md:flex-nowrap items-center gap-6 sm:gap-8 text-xs font-sans text-[#A5A5A5]">
+          <div className="md:col-span-5 flex flex-col min-[420px]:flex-row flex-wrap md:flex-nowrap items-start min-[420px]:items-center gap-3.5 sm:gap-6 md:gap-8 text-xs font-sans text-[#A5A5A5]">
             <a
               href="tel:+919876543210"
               className="flex items-center gap-2 hover:text-[#F5F2EA] transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-white/60" />
+              <Phone className="w-3.5 h-3.5 text-white/60 shrink-0" />
               <span>+91 98765 43210</span>
             </a>
 
@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = () => {
               href="mailto:contact@ajmalktv.in"
               className="flex items-center gap-2 hover:text-[#F5F2EA] transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-white/60" />
+              <Mail className="w-3.5 h-3.5 text-white/60 shrink-0" />
               <span>contact@ajmalktv.in</span>
             </a>
 
@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Right: Social Media Icons (3 cols) */}
-          <div className="md:col-span-3 flex items-center md:justify-end gap-3">
+          <div className="md:col-span-3 flex items-center md:justify-end gap-3 pt-2 md:pt-0">
             {/* LinkedIn */}
             <a
               href="https://linkedin.com"
@@ -98,12 +98,12 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="w-full h-[1px] bg-white/10" />
 
         {/* Bottom Disclaimer & Legal Notice */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] font-sans text-[#A5A5A5]/80">
+        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[10.5px] sm:text-[11px] font-sans text-[#A5A5A5]/80">
           <p>
             © {new Date().getFullYear()} Adv. Muhammad Ajmal KTV. All rights reserved.
           </p>
 
-          <p className="max-w-xl text-center md:text-right text-[10px] text-[#A5A5A5]/60 leading-normal">
+          <p className="max-w-xl text-left md:text-right text-[9.5px] sm:text-[10px] text-[#A5A5A5]/60 leading-normal">
             Disclaimer: As per the rules of the Bar Council of India, advocates are prohibited from soliciting work or advertising. This website is purely intended for informational purposes and does not create an advocate-client relationship.
           </p>
         </div>

@@ -11,7 +11,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen bg-black text-white flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden"
+      className="relative min-h-[90vh] lg:min-h-screen bg-black text-white flex items-center pt-20 min-[400px]:pt-24 sm:pt-28 pb-10 sm:pb-16 overflow-hidden"
     >
       {/* Background Architectural Ambiance & Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full relative z-10">
+      <div className="max-w-7xl mx-auto px-4 min-[380px]:px-5 sm:px-8 lg:px-12 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Typography & CTAs (6 cols on desktop) */}
@@ -41,15 +41,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left max-w-2xl relative z-20"
           >
             {/* Small uppercase label */}
-            <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <span className="text-[11px] sm:text-xs font-sans tracking-[0.28em] text-[#A5A5A5] uppercase font-medium">
+            <div className="flex items-center gap-3 mb-3.5 sm:mb-6">
+              <span className="text-[10.5px] sm:text-xs font-sans tracking-[0.28em] text-[#A5A5A5] uppercase font-medium">
                 Advocate
               </span>
-              <span className="w-12 sm:w-16 h-[1px] bg-white/30" />
+              <span className="w-10 sm:w-16 h-[1px] bg-white/30" />
             </div>
 
             {/* Main Editorial Heading */}
-            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[68px] leading-[1.08] sm:leading-[1.05] tracking-tight text-[#FFFFFF] mb-5 sm:mb-6">
+            <h1 className="font-editorial text-3xl min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[68px] leading-[1.1] sm:leading-[1.05] tracking-tight text-[#FFFFFF] mb-4 sm:mb-6">
               Legal Strategy for <br />
               <span className="italic font-normal text-[#F5F2EA] font-garamond">
                 Real Solutions.
@@ -57,17 +57,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             </h1>
 
             {/* Subtext Description */}
-            <p className="text-sm sm:text-base md:text-lg font-sans text-[#A5A5A5] leading-relaxed max-w-xl font-light mb-8 sm:mb-10">
+            <p className="text-[13.5px] sm:text-base md:text-lg font-sans text-[#A5A5A5] leading-relaxed max-w-xl font-light mb-7 sm:mb-10">
               Focused on delivering practical, ethical and result-driven legal representation.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5">
               {/* Primary Warm Ivory Button */}
               <button
                 type="button"
                 onClick={onOpenConsultation}
-                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-sm bg-[#F5F2EA] text-[#0B0B0B] text-xs sm:text-[13px] tracking-wider uppercase font-sans font-semibold hover:bg-white transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-white/5 active:scale-98"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-sm bg-[#F5F2EA] text-[#0B0B0B] text-xs sm:text-[13px] tracking-wider uppercase font-sans font-semibold hover:bg-white transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-white/5 active:scale-98"
               >
                 <span>Book a Consultation</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-[#0B0B0B]" />
@@ -77,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
               <button
                 type="button"
                 onClick={onOpenVideo}
-                className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3.5 sm:py-4 rounded-sm border border-white/25 text-[#EAE5DA] text-xs sm:text-[13px] tracking-wider uppercase font-sans font-medium hover:border-white/60 hover:text-white transition-all duration-300 group cursor-pointer hover:bg-white/[0.03] active:scale-98"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3.5 sm:py-4 rounded-sm border border-white/25 text-[#EAE5DA] text-xs sm:text-[13px] tracking-wider uppercase font-sans font-medium hover:border-white/60 hover:text-white transition-all duration-300 group cursor-pointer hover:bg-white/[0.03] active:scale-98"
               >
                 <div className="w-5 h-5 rounded-full border border-white/40 flex items-center justify-center group-hover:border-white transition-colors">
                   <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
@@ -92,10 +92,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-6 xl:col-span-6 relative mt-6 lg:mt-0 flex justify-center lg:justify-end -translate-y-[30px]"
+            className="lg:col-span-6 xl:col-span-6 relative mt-4 sm:mt-6 lg:mt-0 flex justify-center lg:justify-end lg:-translate-y-[30px]"
           >
             {/* Seamless blended container matching reference composition */}
-            <div className="relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-[580px] xl:max-w-[620px] select-none group">
+            <div className="relative w-full max-w-[340px] min-[400px]:max-w-[420px] sm:max-w-[520px] lg:max-w-[580px] xl:max-w-[620px] select-none group">
               <img
                 src="/advocate-constitution.jpg"
                 alt="Adv. Muhammad Ajmal KTV holding The Constitution of India"

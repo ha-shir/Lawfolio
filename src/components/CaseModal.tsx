@@ -16,14 +16,14 @@ export const CaseModal: React.FC<CaseModalProps> = ({
   if (!caseItem) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
-      <div className="relative w-full max-w-2xl bg-[#0B0B0B] border border-white/20 rounded-sm shadow-2xl p-6 sm:p-9 text-white my-8 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
+      <div className="relative w-full max-w-2xl bg-[#0B0B0B] border border-white/20 rounded-sm shadow-2xl p-5 sm:p-8 text-white my-auto max-h-[92vh] overflow-y-auto no-scrollbar">
         
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 text-white/50 hover:text-white transition-colors p-1"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-white/50 hover:text-white transition-colors p-1"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />

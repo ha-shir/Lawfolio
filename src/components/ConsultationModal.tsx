@@ -92,18 +92,18 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/65 backdrop-blur-sm transition-opacity"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/65 backdrop-blur-sm transition-opacity"
       onClick={handleReset}
     >
       <div
-        className="relative w-full max-w-xl bg-white border border-[#E5DFD5] rounded-xl shadow-2xl p-6 sm:p-9 text-[#0B0B0B] my-8 overflow-hidden"
+        className="relative w-full max-w-xl bg-white border border-[#E5DFD5] rounded-xl shadow-2xl p-5 sm:p-8 text-[#0B0B0B] my-auto max-h-[92vh] overflow-y-auto no-scrollbar"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           type="button"
           onClick={handleReset}
-          className="absolute top-5 right-5 text-neutral-400 hover:text-[#0B0B0B] transition-colors p-1.5 rounded-full hover:bg-neutral-100 cursor-pointer"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-neutral-400 hover:text-[#0B0B0B] transition-colors p-1.5 rounded-full hover:bg-neutral-100 cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />

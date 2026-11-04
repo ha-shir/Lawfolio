@@ -24,36 +24,36 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
 
   return (
     <section
-      className="bg-[#F5F2EA] text-[#0B0B0B] py-20 sm:py-24 border-b border-[#0B0B0B]/10 relative overflow-hidden"
+      className="bg-[#F5F2EA] text-[#0B0B0B] py-14 sm:py-20 lg:py-24 border-b border-[#0B0B0B]/10 relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div className="max-w-7xl mx-auto px-4 min-[380px]:px-5 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
           
           {/* Left Column: Heading */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
+              <span className="text-[10.5px] sm:text-[11px] font-sans tracking-[0.25em] text-[#0B0B0B]/70 uppercase font-semibold">
                 Testimonial
               </span>
             </div>
 
-            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#0B0B0B] font-medium tracking-tight">
+            <h2 className="font-editorial text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl text-[#0B0B0B] font-medium tracking-tight">
               Client <br />
               Experiences
             </h2>
 
-            <p className="mt-3 text-xs sm:text-sm font-sans text-[#0B0B0B]/60 font-light max-w-xs">
+            <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm font-sans text-[#0B0B0B]/60 font-light max-w-xs">
               Testimonials are published strictly in accordance with ethical transparency and prior client consent.
             </p>
           </div>
 
           {/* Right Column: Prominent Editorial Testimonial */}
-          <div className="lg:col-span-8 flex flex-col justify-between min-h-[180px] sm:min-h-[200px]">
+          <div className="lg:col-span-8 flex flex-col justify-between min-h-[160px] sm:min-h-[200px]">
             <div className="relative">
               {/* Large Decorative Quotation Mark */}
-              <span className="font-editorial text-6xl sm:text-7xl leading-none text-[#0B0B0B]/25 select-none block -mb-4">
+              <span className="font-editorial text-5xl sm:text-7xl leading-none text-[#0B0B0B]/25 select-none block -mb-2 sm:-mb-4">
                 “
               </span>
 
@@ -66,7 +66,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   className="max-w-2xl"
                 >
-                  <p className="font-editorial text-xl sm:text-2xl md:text-3xl font-normal text-[#0B0B0B] leading-snug tracking-tight mb-4">
+                  <p className="font-editorial text-lg min-[400px]:text-xl sm:text-2xl md:text-3xl font-normal text-[#0B0B0B] leading-snug tracking-tight mb-3 sm:mb-4">
                     {current.quote}
                   </p>
 
@@ -75,7 +75,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
                     <span className="text-xs sm:text-[13px] font-sans font-medium text-[#0B0B0B]/80 tracking-wide">
                       {current.clientRole}
                     </span>
-                    <span className="text-[11px] font-sans text-[#0B0B0B]/40">
+                    <span className="text-[10.5px] sm:text-[11px] font-sans text-[#0B0B0B]/40">
                       • {current.caseType}
                     </span>
                   </div>
@@ -84,7 +84,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimon
             </div>
 
             {/* Pagination Indicators */}
-            <div className="flex items-center gap-2 mt-8">
+            <div className="flex items-center gap-2 mt-6 sm:mt-8">
               {testimonials.map((item, idx) => (
                 <button
                   key={item.id}
