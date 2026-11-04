@@ -11,48 +11,45 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] lg:min-h-screen bg-[#0B0B0B] text-white flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden"
+      className="relative min-h-[90vh] lg:min-h-screen bg-black text-white flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden"
     >
       {/* Background Architectural Ambiance & Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft slow-moving ambient light radial */}
         <motion.div
           animate={{
-            opacity: [0.06, 0.14, 0.06],
-            scale: [1, 1.06, 1],
+            opacity: [0.04, 0.1, 0.04],
+            scale: [1, 1.05, 1],
           }}
           transition={{
             duration: 12,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-white/20 via-[#F5F2EA]/10 to-transparent rounded-full blur-[140px]"
+          className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-white/15 via-[#F5F2EA]/10 to-transparent rounded-full blur-[140px]"
         />
-
-        {/* Subtle grid and column silhouettes */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.05),transparent_70%)]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Typography & CTAs (7 cols on desktop) */}
+          {/* Left Column: Typography & CTAs (6 cols on desktop) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 flex flex-col justify-center text-left max-w-2xl relative z-20"
+            className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left max-w-2xl relative z-20"
           >
             {/* Small uppercase label */}
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <span className="text-[11px] sm:text-xs font-sans tracking-[0.28em] text-[#A5A5A5] uppercase font-medium">
                 Advocate
               </span>
-              <span className="w-10 sm:w-14 h-[1px] bg-[#A5A5A5]/40" />
+              <span className="w-12 sm:w-16 h-[1px] bg-white/30" />
             </div>
 
             {/* Main Editorial Heading */}
-            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.08] sm:leading-[1.05] tracking-tight text-[#FFFFFF] mb-5 sm:mb-6">
+            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[68px] leading-[1.08] sm:leading-[1.05] tracking-tight text-[#FFFFFF] mb-5 sm:mb-6">
               Legal Strategy for <br />
               <span className="italic font-normal text-[#F5F2EA] font-garamond">
                 Real Solutions.
@@ -90,54 +87,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
             </div>
           </motion.div>
 
-          {/* Right Column: Seamlessly Blended Advocate Monochrome Portrait (5 cols on desktop) */}
+          {/* Right Column: Advocate Photo with The Constitution of India (6 cols on desktop) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative mt-4 lg:mt-0 flex justify-center lg:justify-end"
+            transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 xl:col-span-6 relative mt-6 lg:mt-0 flex justify-center lg:justify-end"
           >
-            {/* Ambient soft backlight behind portrait */}
-            <div className="absolute -inset-10 bg-[radial-gradient(circle_at_50%_45%,rgba(245,242,234,0.06),transparent_70%)] pointer-events-none blur-2xl" />
+            {/* Seamless blended container matching reference composition */}
+            <div className="relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-[580px] xl:max-w-[620px] select-none group">
+              <img
+                src="/advocate-constitution.jpg"
+                alt="Adv. Muhammad Ajmal KTV holding The Constitution of India"
+                className="w-full h-auto object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                loading="eager"
+              />
 
-            {/* Seamless blended container without any border or box */}
-            <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[520px] select-none group">
-              
-              {/* Outer feathered mask container */}
-              <div
-                className="relative overflow-hidden"
-                style={{
-                  WebkitMaskImage:
-                    'radial-gradient(ellipse 92% 86% at 52% 46%, black 42%, rgba(0,0,0,0.85) 65%, transparent 100%)',
-                  maskImage:
-                    'radial-gradient(ellipse 92% 86% at 52% 46%, black 42%, rgba(0,0,0,0.85) 65%, transparent 100%)',
-                }}
-              >
-                <img
-                  src="/advocate-portrait.jpg"
-                  alt="Adv. Muhammad Ajmal KTV - Advocate High Court of Kerala"
-                  className="w-full h-auto aspect-[4/5] sm:aspect-[4/5] object-cover object-top grayscale contrast-[1.12] brightness-[0.93] transition-transform duration-1000 ease-out group-hover:scale-[1.015]"
-                  loading="eager"
-                />
-
-                {/* 1. Left Gradient Fade (blends seamlessly into text area on desktop) */}
-                <div className="absolute inset-y-0 left-0 w-32 sm:w-48 bg-gradient-to-r from-[#0B0B0B] via-[#0B0B0B]/80 to-transparent pointer-events-none" />
-
-                {/* 2. Bottom Gradient Fade (melts completely into the black Stats Bar below) */}
-                <div className="absolute inset-x-0 bottom-0 h-36 sm:h-52 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/85 to-transparent pointer-events-none" />
-
-                {/* 3. Top Gradient Fade (melts softly into the header/navbar area) */}
-                <div className="absolute inset-x-0 top-0 h-28 sm:h-40 bg-gradient-to-b from-[#0B0B0B] via-[#0B0B0B]/75 to-transparent pointer-events-none" />
-
-                {/* 4. Right Gradient Fade (melts towards the screen edge) */}
-                <div className="absolute inset-y-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#0B0B0B] via-[#0B0B0B]/75 to-transparent pointer-events-none" />
-
-                {/* 5. Radial Vignette for perfectly organic edges */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#0B0B0B_98%)] pointer-events-none" />
-              </div>
-
-              {/* Floor ambient shadow beneath the portrait */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-4/5 h-12 bg-black blur-xl pointer-events-none" />
+              {/* Gentle bottom edge fade to melt seamlessly into the boundary */}
+              <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
             </div>
           </motion.div>
 
