@@ -92,19 +92,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
 
           {/* Right: Solid Pill "Book a Consultation" + Rounded-Square Hamburger Button */}
           <div className="flex items-center gap-2 sm:gap-3 z-20">
-            {/* Solid Pill "Book a Consultation →" Button */}
+            {/* Solid Pill "Book a Consultation →" Button (Hidden on mobile header, available in bottom control bar) */}
             <button
               type="button"
               onClick={onOpenConsultation}
-              className="h-8.5 sm:h-10 px-3 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 flex items-center gap-1.5 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
+              className="hidden sm:inline-flex h-9 sm:h-10 px-3.5 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 items-center gap-2 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
               aria-label="Book a consultation"
             >
               <Calendar className="w-3.5 h-3.5 text-[#0B0B0B] shrink-0" />
               <span className="whitespace-nowrap font-sans">
-                <span className="hidden sm:inline">Book a Consultation</span>
-                <span className="inline sm:hidden">Consult</span>
+                Book a Consultation
               </span>
-              <ArrowRight className="hidden sm:inline w-3.5 h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
             </button>
 
             {/* Hamburger Button with Rounded-Square Border */}
@@ -177,14 +176,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
                       setMenuOpen(false);
                       onOpenConsultation();
                     }}
-                    className="h-8.5 sm:h-10 px-3 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 flex items-center gap-1.5 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
+                    className="hidden sm:inline-flex h-9 sm:h-10 px-3.5 sm:px-5 rounded-full bg-[#F5F2EA] hover:bg-white text-[#0B0B0B] text-xs sm:text-[12.5px] font-sans font-semibold tracking-wide transition-all duration-300 items-center gap-2 sm:gap-2.5 shadow-md active:scale-95 cursor-pointer group"
                   >
                     <Calendar className="w-3.5 h-3.5 text-[#0B0B0B] shrink-0" />
                     <span className="whitespace-nowrap font-sans">
-                      <span className="hidden sm:inline">Book a Consultation</span>
-                      <span className="inline sm:hidden">Consult</span>
+                      Book a Consultation
                     </span>
-                    <ArrowRight className="hidden sm:inline w-3.5 h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#0B0B0B] transition-transform duration-300 group-hover:translate-x-0.5 shrink-0" />
                   </button>
 
                   {/* Close Button in exact same position as hamburger button */}
